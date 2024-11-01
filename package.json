@@ -1,17 +1,21 @@
 {
-  "name": "book-management",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@gabrielneoob/create-react-boilerplate",
+  "private": false,
+  "version": "1.0.2",
+  "bin": {
+    "create-my-boilerplate": "./create-my-boilerplate.js"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "prepare": "husky"
   },
   "dependencies": {
+    "degit": "^2.8.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -61,13 +65,16 @@
     },
     "setupFilesAfterEnv": [
       "<rootDir>/setupTests.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/home/neoob/Development/projects/book-management/create-my-boilerplate.js"
     ]
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "prettier --write",
       "eslint --fix",
-      "npm test"
+      "npm test --passWithNoTests"
     ]
   }
 }
